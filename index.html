@@ -1,0 +1,171 @@
+<html>
+<head>
+    <title>Calculator</title>
+    <style>
+        div{
+            height: auto;
+            width: 400px;
+            border:10px brown groove;
+            padding : 30px;
+            margin : auto;
+            margin-top : 100px;
+            background-color : khaki;
+            box-shadow : 2px 3px 5px purple;
+            border-radius : 10px 10px;
+        }
+        caption{
+            font-size : 25px;
+            color : green;
+            font-weight : bold;
+            background-color : orange;
+        }
+        input{
+            border : 2px solid blue;
+            margin : 6px 0px;
+            height : 30px;
+        }
+        button{
+            background-color : green;
+            font-size : 16px;
+            color : white;
+            padding : 5px;
+            border-radius : 5px;
+            box-shadow : 0px 0px 5px gray;
+        }
+        label{
+            font-size : 20px;
+            color : red;
+            font-weight : bold;
+        }
+        h1{
+            text-align : center;
+            background-image : linear-gradient(to right, black,grey,black);
+            text-shadow : 2px 2px 3px blue;
+            padding : 5px;
+            box-shadow : 2px 4px 4px black;
+        }
+        body{
+            background-color : grey;
+        }
+        marquee a{
+            font-size: 18px;
+            color : black;
+            text-shadow: 2px 2px 2px blue;
+            text-decoration: none;
+            font-family: consolas;
+        }
+    </style>
+    
+</head>
+<body>
+<h1>My First Basic Calculator</h1>
+    <div>
+        <table>
+        <caption>I'm gonna calculate!!</caption>
+        <tr>
+            <td> <label> First Number </label></td> 
+            <td> <input type="number" id = "first"> </td>
+        </tr>
+       <tr> 
+            <td> <label> Second Number </label> </td> 
+            <td> <input type="number" id = "second"> </td>
+       </tr>
+       <tr>
+            <td> <label> Result </label> </td> 
+            <td> <input type="number" id="result"></td>
+        </tr>
+       <tr>
+            <td> <button onclick="myAdd()">Addition</button> </td>
+            <td> <button onclick="mySub()">Substraction</button> </td>
+        </tr>
+        <tr>
+            <td> <button onclick="myMul()">Multiplication</button> </td>
+            <td> <button onclick="myDiv()">Division</button> </td>
+        </tr>
+        </table>
+        <a href="scramble.html"><h2>Click to Play A Game</h2></a>
+        <marquee><a href="#">Developed by Juhi Rani</a></marquee>
+    </div>
+
+</body>
+<script>
+function myAdd()
+{
+    var a = document.getElementById("first").value;
+    var b = document.getElementById("second").value;
+    if(a != "" && b != "")
+    {
+        var x = parseInt(a);
+        var y = parseInt(b);
+        var sum = x + y;
+        var res =  document.getElementById("result");
+        res.value = sum;   
+    }
+    else
+    {
+        alert("You are missing number(s) !!");
+    }
+}
+
+function mySub()
+{
+    var a = document.getElementById("first").value;
+    var b = document.getElementById("second").value;
+     if(a != "" && b != "")
+    {
+    var x = parseInt(a);
+    var y = parseInt(b);
+    var sub = x-y;
+    var res =  document.getElementById("result");
+    res.value = sub;
+    }
+    else
+    {
+        alert("you are missing number(s) !!");
+    }
+}
+
+
+function myMul()
+{
+    var a = document.getElementById("first").value;
+    var b = document.getElementById("second").value;
+    if(a != "" && b != "")
+    {
+
+    var x = parseInt(a);
+   
+    var y = parseInt(b);
+    var mul = x*y;
+    var res =  document.getElementById("result");
+    res.value = mul;
+    }
+    else
+    {
+        alert("you are missing number(s) !!");
+    }
+}
+
+
+function myDiv()
+{
+    var a = document.getElementById("first").value;
+    var b = document.getElementById("second").value;
+    if(a != "" && b != "")
+    {
+
+    var x = parseInt(a);
+    var y = parseInt(b);
+    var div = x/y;
+
+    var res =  document.getElementById("result");
+    res.value = div;
+    }
+     else
+    {
+        alert("you are missing number(s) !!");
+    }
+
+}
+</script>
+</html>
