@@ -100,8 +100,10 @@
     <a href="corona.html">Click to see Corona Cases</a>
 </body>
 <script>
+
 function myAdd()
 {
+    document.getElementById("error").innerHTML = "";
     var a = document.getElementById("first").value;
     var b = document.getElementById("second").value;
     if(a != "" && b != "")
@@ -121,6 +123,7 @@ function myAdd()
 
 function mySub()
 {
+    document.getElementById("error").innerHTML = "";
     var a = document.getElementById("first").value;
     var b = document.getElementById("second").value;
      if(a != "" && b != "")
@@ -141,6 +144,7 @@ function mySub()
 
 function myMul()
 {
+    document.getElementById("error").innerHTML = "";
     var a = document.getElementById("first").value;
     var b = document.getElementById("second").value;
     if(a != "" && b != "")
@@ -163,6 +167,7 @@ function myMul()
 
 function myDiv()
 {
+    document.getElementById("error").innerHTML = "";
     var a = document.getElementById("first").value;
     var b = document.getElementById("second").value;
     if(a != "" && b != "")
