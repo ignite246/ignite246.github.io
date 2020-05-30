@@ -54,14 +54,24 @@
             text-decoration: none;
             font-family: consolas;
         }
+        #error{
+            color : red;
+            font-size: 20px;
+            font-family: cursive;
+            font-weight: bold;
+            padding : 5px;
+            border-radius: 20px;
+            margin-left : 30px;
+        }
     </style>
     
 </head>
 <body>
 <h1>My First Basic Calculator</h1>
     <div>
+        <span id="error"></span>
         <table>
-        <caption>I'm gonna calculate!!</caption>
+        <caption>I'm Gonna Calculate!!</caption>
         <tr>
             <td> <label> First Number </label></td> 
             <td> <input type="number" id = "first"> </td>
@@ -83,10 +93,11 @@
             <td> <button onclick="myDiv()">Division</button> </td>
         </tr>
         </table>
-        <a href="scramble.html"><h2>Click to Play A Game</h2></a>
+        
         <marquee><a href="#">Developed by Juhi Rani</a></marquee>
     </div>
-
+    <a href="scramble.html">Click to Play A Game</a> <br>
+    <a href="corona.html">Click to see Corona Cases</a>
 </body>
 <script>
 function myAdd()
@@ -103,7 +114,8 @@ function myAdd()
     }
     else
     {
-        alert("You are missing number(s) !!");
+        //alert("You are missing number(s) !!");
+        document.getElementById("error").innerHTML = "You've missed operand(s) !!";
     }
 }
 
@@ -121,7 +133,8 @@ function mySub()
     }
     else
     {
-        alert("you are missing number(s) !!");
+        //alert("you are missing number(s) !!");
+        document.getElementById("error").innerHTML = "You've missed operand(s) !!";
     }
 }
 
@@ -142,7 +155,8 @@ function myMul()
     }
     else
     {
-        alert("you are missing number(s) !!");
+        //alert("you are missing number(s) !!");
+        document.getElementById("error").innerHTML = "You've missed operand(s) !!";
     }
 }
 
@@ -156,14 +170,23 @@ function myDiv()
 
     var x = parseInt(a);
     var y = parseInt(b);
-    var div = x/y;
+        if(y == 0)
+        {
+            document.getElementById("error").innerHTML = "Division by Zero is not Possible !!!";
+        }
+        else
+        {
+            var div = x/y;
+        }
+        
 
     var res =  document.getElementById("result");
     res.value = div;
     }
      else
     {
-        alert("you are missing number(s) !!");
+        //alert("you are missing number(s) !!");
+        document.getElementById("error").innerHTML = "You've missed operand(s) !!";
     }
 
 }
