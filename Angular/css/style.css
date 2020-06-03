@@ -1,0 +1,12 @@
+body{
+    background-color: khaki;
+}
+div[class='col-md-4']{
+
+    box-shadow: 3px 5px 5px gray;
+    border-radius: 5px;
+}
+
+#country_name{
+    text-shadow: 3px 3px 3px blue;
+}
