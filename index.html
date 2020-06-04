@@ -4,25 +4,39 @@
     <style>
         div{
             height: auto;
-            width: 400px;
+            width: 500px;
             border:10px brown groove;
-            padding : 30px;
             margin : auto;
             margin-top : 100px;
+            padding : 10px;
             background-color : khaki;
             box-shadow : 2px 3px 5px purple;
             border-radius : 10px 10px;
+            justify-content: center;
+        }
+        table{
+            margin : auto;
+            margin-top: 10px;
         }
         caption{
             font-size : 25px;
             color : green;
             font-weight : bold;
-            background-color : orange;
+            background-color : black;
+            border-radius: 10px;
+            box-shadow : 0px 0px 5px black;
         }
         input{
-            border : 2px solid blue;
+            border : none;
             margin : 6px 0px;
+            padding : 5px;
+            color : blue;
+            font-weight: bold;
+            font-size : 20px;
+            background-color: whitesmoke;
             height : 30px;
+            box-shadow: 0px 0px 5px black;
+            border-radius: 10px;
         }
         button{
             background-color : green;
@@ -48,9 +62,9 @@
             background-color : grey;
         }
         marquee a{
-            font-size: 18px;
-            color : black;
-            text-shadow: 2px 2px 2px blue;
+            font-size: 20px;
+            color : white;
+            text-shadow: 2px 2px 1px black;
             text-decoration: none;
             font-family: consolas;
         }
@@ -63,15 +77,35 @@
             border-radius: 20px;
             margin-left : 30px;
         }
+        ol li a{
+            color : darkorange;
+            margin: 5px;
+            padding: 5px;
+            text-decoration: none;
+        }
+        ol li a:hover{
+            letter-spacing: 1px;
+            font-size : 18px;
+            color : blue;
+            font-weight: bold;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        span{
+            text-align: center;
+            text-shadow: 0px 0px 5px blue;
+        }
     </style>
     
 </head>
 <body>
 <h1>My First Basic Calculator</h1>
     <div>
-        <span id="error"></span>
+        
         <table>
         <caption>I'm Gonna Calculate!!</caption>
+        <tr>
+            <td colspan="2"><span id="error"></span></td>
+        </tr>
         <tr>
             <td> <label> First Number </label></td> 
             <td> <input type="number" id = "first"> </td>
@@ -99,8 +133,9 @@
     <div>
         <ol>
             <li><a href="Game/scramble.html">Click to Play A Game</a></li>
-            <li><a href="Corona/corona.html">Click to see Corona Cases</a></li>
+            <li><a href="Corona/corona.html">Click to see Corona Cases Day Wise</a></li>
             <li><a href="Angular/covidTracker.html">Click to see number of Cases WorldWide</a></li>
+            <li><a href="Calculator/Calculator.html">A Responsive Calculator</a></li>
         </ol>
     </div>
 </body>
