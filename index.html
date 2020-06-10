@@ -1,239 +1,337 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Calculator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        div{
-            height: auto;
-            width: 500px;
-            border:10px brown groove;
-            margin : auto;
-            margin-top : 100px;
-            padding : 10px;
-            background-color : khaki;
-            box-shadow : 2px 3px 5px purple;
-            border-radius : 10px 10px;
-            justify-content: center;
+        /* Make the image fully responsive */
+
+        *{
+            margin : 0;
+            padding : 0;
+            font-family: 'Josefin Sans', sans-serif;
         }
-        table{
-            margin : auto;
-            margin-top: 10px;
+        .carousel-inner img {
+          width: 100%;
+          height: 100%;
         }
-        caption{
-            font-size : 25px;
-            color : green;
-            font-weight : bold;
-            background-color : black;
-            border-radius: 10px;
-            box-shadow : 0px 0px 5px black;
-        }
-        input{
-            border : none;
-            margin : 6px 0px;
-            padding : 5px;
-            color : blue;
-            font-weight: bold;
-            font-size : 20px;
-            background-color: whitesmoke;
-            height : 30px;
-            box-shadow: 0px 0px 5px black;
-            border-radius: 10px;
-        }
-        button{
-            background-color : green;
-            font-size : 16px;
-            color : white;
-            padding : 5px;
-            border-radius : 5px;
-            box-shadow : 0px 0px 5px gray;
-        }
-        label{
-            font-size : 20px;
-            color : red;
-            font-weight : bold;
-        }
-        h1{
-            text-align : center;
-            background-image : linear-gradient(to right, black,grey,black);
-            text-shadow : 2px 2px 3px blue;
-            padding : 5px;
-            box-shadow : 2px 4px 4px black;
-        }
-        body{
-            background-color : grey;
-        }
-        marquee a{
-            font-size: 20px;
-            color : white;
-            text-shadow: 2px 2px 1px black;
-            text-decoration: none;
-            font-family: consolas;
-        }
-        #error{
-            color : red;
-            font-size: 20px;
-            font-family: cursive;
-            font-weight: bold;
-            padding : 5px;
-            border-radius: 20px;
-            margin-left : 30px;
-        }
-        ol li a{
-            color : darkorange;
-            margin: 5px;
-            padding: 5px;
-            text-decoration: none;
-        }
-        ol li a:hover{
-            letter-spacing: 1px;
-            font-size : 18px;
-            color : blue;
-            font-weight: bold;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        span{
-            text-align: center;
-            text-shadow: 0px 0px 5px blue;
-        }
-    </style>
-    
+        </style>
+    <title>Home</title>
 </head>
 <body>
-<h1>My First Basic Calculator</h1>
-    <div>
+    
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
         
-        <table>
-        <caption>I'm Gonna Calculate!!</caption>
-        <tr>
-            <td colspan="2"><span id="error"></span></td>
-        </tr>
-        <tr>
-            <td> <label> First Number </label></td> 
-            <td> <input type="number" id = "first"> </td>
-        </tr>
-       <tr> 
-            <td> <label> Second Number </label> </td> 
-            <td> <input type="number" id = "second"> </td>
-       </tr>
-       <tr>
-            <td> <label> Result </label> </td> 
-            <td> <input type="number" id="result"></td>
-        </tr>
-       <tr>
-            <td> <button onclick="myAdd()">Addition</button> </td>
-            <td> <button onclick="mySub()">Substraction</button> </td>
-        </tr>
-        <tr>
-            <td> <button onclick="myMul()">Multiplication</button> </td>
-            <td> <button onclick="myDiv()">Division</button> </td>
-        </tr>
-        </table>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="about.html">About Us</a>
+                </li>
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="Calculator/juhi.html">Juhi Calculator</a>
+                    <a class="dropdown-item" href="Calculator/Calculator.html">Responsive Calc</a>
+                    <a class="dropdown-item" href="Corona/corona.html">Corona Case Tracker India</a>
+                    <a class="dropdown-item" href="Angular/covidTracker.html">Corona WorldWide Case</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+            </div>
+        </nav>
+
+      <div id="demo" class="carousel slide" data-ride="carousel">
+        <ul class="carousel-indicators">
+          <li data-target="#demo" data-slide-to="0" class="active"></li>
+          <li data-target="#demo" data-slide-to="1"></li>
+          <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="images/wp3.jpg" alt="Los Angeles" width="1100" height="500">
+            <div class="carousel-caption">
+              <h3>Los Angeles</h3>
+              <p>We had such a great time in LA!</p>
+            </div>   
+          </div>
+          <div class="carousel-item">
+            <img src="images/wp2.jpg" alt="Chicago" width="1100" height="500">
+            <div class="carousel-caption">
+              <h3>Chicago</h3>
+              <p>Thank you, Chicago!</p>
+            </div>   
+          </div>
+          <div class="carousel-item">
+            <img src="images/wp3.jpg" alt="New York" width="1100" height="500">
+            <div class="carousel-caption">
+              <h3>New York</h3>
+              <p>We love the Big Apple!</p>
+            </div>   
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+</header>
+
+<!-- About Us start -->
+
+<section>
+
+    <div class="container-fluid">
+        <h1 class="text-center text-capitalize pt-5">About</h1>
+        <hr class="w-25 mx-auto">
+
+        <div class="row mb-5">
+            <div class="col-lg-6 col-md-6 col-12">
+                <img src="images/wp4.jpg" class="img-fluid">
+            </div>
+            <div class="col-lg-6 col-md-6 col-12">
+                <h1>Who Am I ?</h1>
+                <hr>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Nobis et pariatur cumque ex non corporis, maxime animi, 
+                    similique qui obcaecati sed facilis error quaerat dolor, 
+                    accusantium aut. Nesciunt, earum modi? Lorem ipsum dolor sit amet consectetur, 
+                    adipisicing elit. Ullam corrupti perspiciatis architecto
+                     explicabo neque minus facere odio, quisquam magni reiciendis, 
+                     voluptatibus cum recusandae saepe at cupiditate optio possimus
+                    iure! Suscipit?
+                </p>
+                <button class="btn bg-primary text-white">Wanna Know me</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Us Ends -->
+
+<!-- Services Start -->
+
+<section>
+    <div class="container">
+        <h1 class="text-center">Services</h1>
+        <hr class="w-25 mx-auto pt-5"> 
+    </div>
+
+    <div class="row text-center mb-5">
+        <div class="col-lg-4 col-md-4 col-12">
+            <div class="card">
+                <img class="card-img-top" src="images/wp3.jpg" alt="Card image">
+                <div class="card-body">
+                  <h4 class="card-title">John Doe</h4>
+                  <p class="card-text">Some example text.</p>
+                  <a href="#" class="btn btn-primary">See Profile</a>
+                </div>
+              </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-12">
+            <div class="card">
+                <img class="card-img-top" src="images/wp3.jpg" alt="Card image">
+                <div class="card-body">
+                  <h4 class="card-title">John Doe</h4>
+                  <p class="card-text">Some example text.</p>
+                  <a href="#" class="btn btn-primary">See Profile</a>
+                </div>
+              </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-12">
+            <div class="card">
+                <img class="card-img-top" src="images/wp3.jpg" alt="Card image">
+                <div class="card-body">
+                  <h4 class="card-title">John Doe</h4>
+                  <p class="card-text">Some example text.</p>
+                  <a href="#" class="btn btn-primary">See Profile</a>
+                </div>
+              </div>
+        </div>
+    </div>
+
+</section>
+
+<!-- Services Ends -->
+
+<!-- Contact  -->
+<section class="bg-primary">
+    <article class="py-5 text-center text-white">
+        <div>
+            <h3 class="display-4">+91 6201320703</h3>
+            <p>If you want best services, call us now</p>
+            <button class="btn btn-warning">Contact Now</button>
+        </div>
+    </article>
+</section>
+
+<!-- Conatct Ends -->
+
+<!-- Gallery Starts -->
+<section>
+<div class="container pt-5">
+    <h1 class="text-center">Gallery</h1>
+    <hr class="w-25 mx-auto pt-5"> 
+
+    <div class="row">
+        <div class="col-lg-4 col-md-2 col-12 mb-4">
+            <img src="images/wp3.jpg" class="img-fluid">
+        </div>
+        <div class="col-lg-4 col-md-2 col-12 mb-4">
+            <img src="images/wp3.jpg" class="img-fluid">
+        </div>
+        <div class="col-lg-4 col-md-2 col-12 mb-4">
+            <img src="images/wp3.jpg" class="img-fluid">
+        </div>
+        <div class="col-lg-4 col-md-2 col-12 mb-4">
+            <img src="images/wp3.jpg" class="img-fluid">
+        </div>
+        <div class="col-lg-4 col-md-2 col-12 mb-4">
+            <img src="images/wp3.jpg" class="img-fluid">
+        </div>
+        <div class="col-lg-4 col-md-2 col-12 mb-4">
+            <img src="images/wp3.jpg" class="img-fluid">
+        </div>
+    </div>
+</div>
+</section>
+<!-- Gallery Ends -->
+
+<!-- Register form -->
+
+<section class="bg-primary">
+    <article class="py-5 text-center text-white">
+        <div>
+            <h3 class="display-4">Want to Join !</h3>
+            <p>Be in touch with me for us</p>
+            <Join class="btn btn-warning" data-toggle="modal" data-target="#myModal">Join Now</button>
+         </div>
+    </article>
+      
+        <!-- The Modal -->
+        <div class="modal fade" id="myModal">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+            
+              <!-- Modal Header -->
+              <div class="modal-header">
+                <h4 class="modal-title">Sign up</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+              
+              <!-- Modal body -->
+              <div class="modal-body">
+                <form action="/action_page.php">
+                    <div class="form-group">
+                      <label for="email">Email address:</label>
+                      <input type="email" class="form-control" placeholder="Enter email" id="email" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                      <label for="pwd">Password:</label>
+                      <input type="password" class="form-control" placeholder="Enter password" id="pwd">
+                    </div>
+                    <div class="form-group form-check">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox"> Remember me
+                      </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+              </div>
+              
+              <!-- Modal footer -->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+              
+            </div>
+          </div>
+        </div>
         
-        <marquee><a href="#">Developed by Juhi Rani</a></marquee>
+      </div>
+    
+</section>
+
+<!-- Register form  end-->
+<!-- Contact us start -->
+<section>
+    <div class="container pt-5 mb-5">
+        <h1 class="text-center">Contact Us</h1>
+        <hr class="w-25 mx-auto pt-5"> 
+    
+        <div class="w-50 mx-auto">
+            <form action="/action_page.php">
+                <div class="form-group">
+                    <label for="email">Your Name</label>
+                    <input type="text" class="form-control" placeholder="Enter your full name" id="name" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Email</label>
+                    <input type="password" class="form-control" placeholder="Enter an active email id" id="email">
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Mobile No.:</label>
+                    <input type="number" class="form-control" placeholder="Enter active mobile number" id="mobile">
+                </div>
+
+                <div class="form-group">
+                    <label>Comments</label>
+                    <textarea class="form-control"></textarea>
+                </div>
+
+                <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox"> Remember me
+                </label>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
     </div>
-    <div>
-        <ol>
-            <li><a href="Game/scramble.html">Click to Play A Game</a></li>
-            <li><a href="Corona/corona.html">Click to see Corona Cases Day Wise</a></li>
-            <li><a href="Angular/covidTracker.html">Click to see number of Cases WorldWide</a></li>
-            <li><a href="Calculator/Calculator.html">A Responsive Calculator</a></li>
-        </ol>
-    </div>
+</section>
+
+<!-- Contact us end -->
+
+<!-- Footer -->
+<footer>
+    <p class="text-center bg-dark text-white">Rahul Kumar 2020 @momo.com</p>
+</footer>
+
 </body>
-<script>
 
-function myAdd()
-{
-    document.getElementById("error").innerHTML = "";
-    var a = document.getElementById("first").value;
-    var b = document.getElementById("second").value;
-    if(a != "" && b != "")
-    {
-        var x = parseInt(a);
-        var y = parseInt(b);
-        var sum = x + y;
-        var res =  document.getElementById("result");
-        res.value = sum;   
-    }
-    else
-    {
-        //alert("You are missing number(s) !!");
-        document.getElementById("error").innerHTML = "You've missed operand(s) !!";
-    }
-}
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-function mySub()
-{
-    document.getElementById("error").innerHTML = "";
-    var a = document.getElementById("first").value;
-    var b = document.getElementById("second").value;
-     if(a != "" && b != "")
-    {
-    var x = parseInt(a);
-    var y = parseInt(b);
-    var sub = x-y;
-    var res =  document.getElementById("result");
-    res.value = sub;
-    }
-    else
-    {
-        //alert("you are missing number(s) !!");
-        document.getElementById("error").innerHTML = "You've missed operand(s) !!";
-    }
-}
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 
-
-function myMul()
-{
-    document.getElementById("error").innerHTML = "";
-    var a = document.getElementById("first").value;
-    var b = document.getElementById("second").value;
-    if(a != "" && b != "")
-    {
-
-    var x = parseInt(a);
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
    
-    var y = parseInt(b);
-    var mul = x*y;
-    var res =  document.getElementById("result");
-    res.value = mul;
-    }
-    else
-    {
-        //alert("you are missing number(s) !!");
-        document.getElementById("error").innerHTML = "You've missed operand(s) !!";
-    }
-}
-
-
-function myDiv()
-{
-    document.getElementById("error").innerHTML = "";
-    var a = document.getElementById("first").value;
-    var b = document.getElementById("second").value;
-    if(a != "" && b != "")
-    {
-
-    var x = parseInt(a);
-    var y = parseInt(b);
-        if(y == 0)
-        {
-            document.getElementById("error").innerHTML = "Division by Zero is not Possible !!!";
-        }
-        else
-        {
-            var div = x/y;
-        }
-        
-
-    var res =  document.getElementById("result");
-    res.value = div;
-    }
-     else
-    {
-        //alert("you are missing number(s) !!");
-        document.getElementById("error").innerHTML = "You've missed operand(s) !!";
-    }
-
-}
-</script>
 </html>
