@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>TODOs List</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 mt-5 border border-danger p-2">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h2>TODOs List</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="title">Title : </label>
+                            <input type="text" id="title" class="form-control">
+                        </div>
+                        <label for="desc">Description : </label>
+                        <div class="form-group">
+                            <textarea id="desc" class="form-control"></textarea>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="container text-center">
+                            <button type="button" id="addBtn" class="btn btn-md btn-success">Add to List</button>
+                            <button type="button" id="clearBtn" class="btn btn-md btn-danger">Clear Field</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 offset-md-2 mt-5 border border-dark p-2">
+                <table class="table table-hover">
+                    <thead>
+                        <tr class="text-center">
+                            <th scope="col">Sl.No</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+
+
+
+    function updateList() {
+        let jsonArr = JSON.parse(localStorage.getItem("jsonArray"))
+            ;
+        console.log(jsonArr);
+        if (jsonArr != null) {
+            for (let i = 0; i < jsonArr.length; i++) {
+                let obj = jsonArr[i];
+                //console.log(obj);
+                $("#tableBody").append(`<tr><td>${i + 1}</td><td>${obj.title}</td><td>${obj.desc}</td><td>
+                                <div class="container-fluid text-center">
+                                    <button class="btn btn-sm btn-primary" title='Edit'><span class="fa fa-edit"></span></button>
+                                    <button class="btn btn-sm btn-danger" title='Delete'><span class="fa fa-close"></span></button>
+                                </div>
+                            </td></tr>`);
+            }
+        }
+    };
+
+    $(document).ready(function () {
+
+        updateList();
+        var jsonArray = [];
+        $("#addBtn").click(function () {
+            console.log("Add clicked....");
+            let title = $("#title").val().trim();
+            let desc = $("#desc").val().trim();
+
+            if (title != "" && desc != "") {
+                console.log(title, desc);
+                let obj = {
+                    title: title, desc: desc
+                };
+                jsonArray.push(obj);
+                console.log(jsonArray);
+                localStorage.setItem("jsonArray", JSON.stringify(jsonArray));
+                updateList();
+            }
+            else {
+                console.log("Blanks are not allowed");
+            }
+        });
+    });
+</script>
+
+</html>
