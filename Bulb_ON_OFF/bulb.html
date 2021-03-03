@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulb ON-OFF Project</title>
+    <style>
+        button {
+            border-radius: 10px;
+            color: blue;
+            background-color: burlywood;
+            margin-left: 20px;
+        }
+
+        img {
+            margin-left: 60px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Bulb Controller</h1>
+    <div id="buttonDIV">
+        <button id="turnOnBtn" onclick="turnOn()">Turn ON</button>
+        <button id="turnOfBtn" onclick="turnOff()">Turn OFF</button>
+    </div>
+    <div>
+        <img id="bulb" src="bulbOFF.png" />
+    </div>
+</body>
+<script>
+
+    function turnOn() {
+        console.log("turning on...")
+        let bulbObj = document.getElementById("bulb");
+        if (bulbObj.getAttribute('src') == 'bulbON.png') {
+            console.log("Bulb is already on")
+        }
+        else {
+            bulbObj.setAttribute('src', 'bulbON.png')
+        }
+    }
+
+    function turnOff() {
+        console.log("turning off...")
+        let bulbObj = document.getElementById("bulb");
+        if (bulbObj.getAttribute('src') == 'bulbOFF.png') {
+            console.log("Bulb is already off")
+        }
+        else {
+            bulbObj.setAttribute('src', 'bulbOFF.png')
+        }
+    }
+
+</script>
+
+</html>
