@@ -2,33 +2,39 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bulb ON-OFF Project</title>
-    <style>
-        button {
-            border-radius: 10px;
-            color: blue;
-            background-color: burlywood;
-            margin-left: 20px;
-        }
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        img {
-            margin-left: 60px;
-            margin-top: 20px;
-        }
-    </style>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <title>Bulb ON-OFF Project</title>
 </head>
 
-<body>
-    <h1>Bulb Controller</h1>
-    <div id="buttonDIV">
-        <button id="turnOnBtn" onclick="turnOn()">Turn ON</button>
-        <button id="turnOfBtn" onclick="turnOff()">Turn OFF</button>
-    </div>
-    <div>
-        <img id="bulb" src="bulbOFF.png" />
+<body class="bg-light">
+
+    <div class="container">
+        <div class="row m-5">
+            <div class="col-md-6 offset-md-3">
+                <div class="card text-center">
+                    <div class="card-header">
+                        <h1>Bulb Controller</h1>
+                    </div>
+                    <div class="card-body">
+                        <img id="bulb" src="bulbOFF.jpg" />
+                    </div>
+                    <div class="card-footer">
+                        <div class="container">
+                            <button id="turnOnBtn" class="btn btn-md btn-success" onclick="turnOn()">Turn ON</button>
+                            <button id="turnOfBtn" class="btn btn-md btn-danger" onclick="turnOff()">Turn OFF</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 <script>
@@ -36,22 +42,24 @@
     function turnOn() {
         console.log("turning on...")
         let bulbObj = document.getElementById("bulb");
-        if (bulbObj.getAttribute('src') == 'bulbON.png') {
+        if (bulbObj.getAttribute('src') == 'bulbON.jpg') {
             console.log("Bulb is already on")
+            swal("Hey, Bulb is already ON !!", "Switch tod doge kya 🤷‍♂️🤷‍♂️ ?", "info");
         }
         else {
-            bulbObj.setAttribute('src', 'bulbON.png')
+            bulbObj.setAttribute('src', 'bulbON.jpg')
         }
     }
 
     function turnOff() {
         console.log("turning off...")
         let bulbObj = document.getElementById("bulb");
-        if (bulbObj.getAttribute('src') == 'bulbOFF.png') {
+        if (bulbObj.getAttribute('src') == 'bulbOFF.jpg') {
             console.log("Bulb is already off")
+            swal("Hey, Bujh gail hau already !!", "Switch fod doge kya 🤷‍♂️🤷‍♂️ ?", "error");
         }
         else {
-            bulbObj.setAttribute('src', 'bulbOFF.png')
+            bulbObj.setAttribute('src', 'bulbOFF.jpg')
         }
     }
 
