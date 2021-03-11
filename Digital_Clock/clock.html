@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <title>Digital Clock</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+
+        #clock {
+            font-family: 'Orbitron', sans-serif;
+            text-shadow: 2px 2px 1px green;
+        }
+
+        #myCard :hover {
+            box-shadow: 0px 0px 15px rgb(18, 201, 28);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row border p-4 text-center border-success">
+            <div class="col-md-4 p-0 offset-md-4 border border-danger">
+                <div class="card bg-secondary
+                ">
+                    <div class="card-header">
+                        <h3>My Digital Clock 🕥</h3>
+                    </div>
+                    <div id="myCard" class="card-body bg-dark">
+                        <h1 id="clock" class="text-primary">00:00</h1>
+                        <button class="btn" onclick="stopClock()">Pause</button>
+                    </div>
+                    <div class="card-footer">
+                        <a class="btn text-info" href="www.https://ignite246.github.io">YoBroRahul</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+
+
+    const stopClock = () => {
+        swal("Work in Progress", "Pause will work, AM PM will be added", "info");
+    }
+    const getTime = () => {
+        let dateTime = new Date();
+        let hours = dateTime.getHours();
+        let min = dateTime.getMinutes();
+        let sec = dateTime.getSeconds();
+
+        let clockTime = `${hours} : ${min} : ${sec}`
+
+        return clockTime;
+
+    }
+
+    const clockObj = document.getElementById("clock");
+
+    setInterval(() => {
+        let clockTime = getTime();
+        clockObj.innerText = clockTime;
+        console.log(clockTime);
+    }, 1000);
+</script>
+
+</html>
