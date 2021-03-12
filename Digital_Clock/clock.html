@@ -20,32 +20,39 @@
             color: white;
         }
 
-        #clock {
-            font-family: 'Orbitron', sans-serif;
-            text-shadow: 2px 2px 1px green;
+        #clockContainer {
+            margin-top: 25vh;
         }
 
-        #myCard :hover {
+        #clock {
+            font-family: 'Orbitron', sans-serif;
+            text-shadow: 0px 0px 5px rgb(32, 10, 233);
+            color: rgb(255, 0, 234);
+
+        }
+
+        #myCardBody :hover {
             box-shadow: 0px 0px 15px rgb(18, 201, 28);
         }
     </style>
 </head>
 
 <body>
-    <div class="container-fluid">
-        <div class="row border p-4 text-center border-success">
-            <div class="col-md-4 p-0 offset-md-4 border border-danger">
+    <div class="container-fluid" id="clockContainer">
+        <div class="row p-4 text-center">
+            <div
+                class="col-md-6 offset-md-3 col-xl-4 offset-xl-4 col-sm-10 offset-sm-1 col-xs-12 offset-xs-0 p-0 border border-white">
                 <div class="card bg-secondary
                 ">
                     <div class="card-header">
                         <h3>My Digital Clock 🕥</h3>
                     </div>
-                    <div id="myCard" class="card-body bg-dark">
-                        <h1 id="clock" class="text-primary">00:00</h1>
-                        <button class="btn" onclick="stopClock()">Pause</button>
+                    <div id="myCardBody" class="card-body bg-dark">
+                        <h1 id="clock">00:00</h1>
+                        <button class="btn btn-md btn-outline-primary" onclick="stopClock()">Pause</button>
                     </div>
                     <div class="card-footer">
-                        <a class="btn text-info" href="www.https://ignite246.github.io">YoBroRahul</a>
+                        <a class="btn text-info" href="https://ignite246.github.io/">YoBroRahul</a>
                     </div>
                 </div>
             </div>
@@ -54,17 +61,28 @@
 </body>
 <script>
 
-
+    swal("Hey Welcome To", "YoBroRahul 💯", "success");
     const stopClock = () => {
-        swal("Work in Progress", "Pause will work, AM PM will be added", "info");
+        swal("Work in Progress", "Pause will work", "info");
     }
     const getTime = () => {
         let dateTime = new Date();
         let hours = dateTime.getHours();
+
+        let AM_PM = hours >= 12 ? "PM" : "AM";
+
+        hours = hours % 12;
+        hours = hours == 0 ? 12 : hours;
+
         let min = dateTime.getMinutes();
+
+        min = min < 10 ? ("0" + min) : min;
+
         let sec = dateTime.getSeconds();
 
-        let clockTime = `${hours} : ${min} : ${sec}`
+        sec = sec < 10 ? ("0" + sec) : sec;
+
+        let clockTime = `${hours} : ${min} : ${sec} : ${AM_PM}`;
 
         return clockTime;
 
@@ -75,7 +93,7 @@
     setInterval(() => {
         let clockTime = getTime();
         clockObj.innerText = clockTime;
-        console.log(clockTime);
+        //console.log(clockTime);
     }, 1000);
 </script>
 
