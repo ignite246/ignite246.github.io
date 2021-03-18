@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    </link>
+
+    <title>Resume Generator</title>
+
+</head>
+
+<body>
+    <div class="container">
+
+        <!--===========================================Resume Form Section Starts====================================================-->
+        <section id="resumeSection" style=" display:block;">
+            <div class="row mt-5">
+                <div class="col-sm-6 border border-success p-0">
+                    <div class="card">
+                        <div class="card-header bg-dark text-white text-center">
+                            <h2>Personal Data</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="name">Name : </label>
+                                <input type="text" id="name" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label for="dob">DOB : </label>
+                                <input type="date" id="dob" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email : </label>
+                                <input type="email" id="email" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label for="contact">Contact : </label>
+                                <input type="text" id="contact" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label for="linked">LinkedIn Profile: </label>
+                                <input type="text" id="linked" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 border border-primary p-0">
+                    <div class="card">
+                        <div class="card-header bg-dark text-white text-center">
+                            <h2>Professional Data</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="objective">Career Objective : </label>
+                                <textarea type="text" id="objective" class="form-control"></textarea>
+                            </div>
+                            <div class="form-group" id="QfDiv">
+                                <!--Must be parent of the button-->
+
+                                <label>Qualification(s): </label>
+                                <textarea type="text" class="form-control qualifications"></textarea>
+                                <!--
+                            dynamically adding new text area here
+                            -->
+
+                                <div class="container" id="addQfBtnContainer">
+                                    <button onclick="addQfTextarea()" type="button"
+                                        class="btn btn-primary btn-md">Add</button>
+                                </div>
+                            </div>
+
+
+
+                            <div class="form-group" id="ExpDiv">
+                                <!--Must be parent of the button-->
+
+                                <label>Experience(s) : </label>
+                                <textarea type="text" class="form-control experiences"></textarea>
+                                <!--
+                             add new text area here dynamically
+                            -->
+                                <div class="container" id="addExpBtnContainer">
+                                    <button onclick="addExpTextarea()" type="button"
+                                        class="btn btn-primary btn-md">Add</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <button onclick="generateResume()" class="btn btn-block btn-success">Generate Resume</button>
+            </div>
+        </section>
+        <!--==========================================Resume Form Section Ends========================================================-->
+
+        <!--******************************************Template Section Starts**************************************************-->
+        <section id="templateSection" style="display: none;">
+            <div class="row mt-5">
+                <div class="col-sm-4 border border-danger p-0">
+                    <div class="card text-center">
+                        <div class="card-header">
+                            <img class="img-fluid"
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgCIoKxXZss5sCIP3jHf-fWgBE9y5M3wKLRg&usqp=CAU"
+                                alt="Profile Picture">
+                        </div>
+                        <div class="card-body">
+                            <div id="nameTmp">
+                                <h4>Your Name</h4>
+                            </div>
+                            <div id="dobTmp">
+                                <h4>00-00-0000</h4>
+                            </div>
+                            <div id="contactTmp">
+                                <h4>9876543210</h4>
+                            </div>
+                            <div id="emailTmp">
+                                <h4>abc@pqr.com</h4>
+                            </div>
+                            <div id="linkedTmp">
+                                <a href="">https://www.linkedin.com/in/myrahul703</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-8 border border-warning p-0">
+                    <div class="card">
+                        <div class="card-header bg-primary">
+                            <h5>Career Objective</h5>
+                        </div>
+                        <div class="card-body bg-info">
+                            <p id="objectiveTmp">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim minima
+                                aut
+                                explicabo iusto
+                                corrupti, suscipit inventore. Autem, voluptate excepturi? Omnis quibusdam asperiores
+                                tempore,
+                                vel nulla voluptas repudiandae sapiente. Sapiente, repellendus.</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header bg-primary">
+                            <h5>Qualification(s)</h5>
+                        </div>
+                        <div class="card-body bg-info">
+                            <ul id="qualificationsTmp">
+                                <li>BSC It from Ranchi College with 75%.</li>
+                                <li>BSC It from Ranchi College with 75%.</li>
+                                <li>BSC It from Ranchi College with 75%.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header bg-primary">
+                            <h5>Experience(s)</h5>
+                        </div>
+                        <div class="card-body bg-info">
+                            <ul id="experiencesTmp">
+                                <li>Working in TCS since July 2019 as Developer</li>
+                                <li>Working in TCS since July 2019 as Developer</li>
+                                <li>Working in TCS since July 2019 as Developer</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row mb-5">
+                <button onclick="printCV()" class="btn btn-block btn-danger">
+                    Print
+                </button>
+            </div>
+        </section>
+        <!--*********************************************Template Section Ends********************************************************-->
+
+
+    </div>
+    <!--Container End-->
+</body>
+<script src="script.js"></script>
+
+</html>
