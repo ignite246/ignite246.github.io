@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <style>
+        * {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+    </style>
+
+    <title>Age Calculator</title>
+</head>
+
+<body style="background-color: #e2e2e2;">
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h2 class="text-success">Enter your DOB</h2>
+                        <div id="error" class="text-danger"></div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label for="date">Date</label>
+                                <input type="number" id="date" class="form-control" value="1" />
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="month">Month</label>
+                                <select id="month" class="form-control">
+                                    <option value="January" selected>Jan</option>
+                                    <option value="February">Feb</option>
+                                    <option value="March">March</option>
+                                    <option value="April">April</option>
+                                    <option value="May">May</option>
+                                    <option value="June">June</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="year">Year</label>
+                                <input type="number" id="year" class="form-control" value="2000" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="row bg-secondary p-1 mt-3 text-center">
+                            <div class="col-sm-6">
+                                <button class="btn btn-md btn-primary" onclick="calcAge()">Get Age</button>
+                            </div>
+                            <div class="col-sm-6">
+                                <h4 id="currentAge" class="text-white">Your Age ❓</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    swal("YoBroRahul 💯", "Welcomes You 🌹🌹 ~ Still bugs in the app ❗❗", "success");
+    const calcAge = () => {
+        console.log("Calculating age ..");
+
+        let dt = document.getElementById("date").value;
+        let month = document.getElementById("month").value;
+        let year = document.getElementById("year").value;
+
+        if (dt != "" && month != "" && year != "") {
+
+            if (dt < 31 && dt > 0) {
+
+                console.log(dt, month, year);
+
+                //parsing into in a date
+                let str = `${dt} ${month} ${year}`;
+                let dob = new Date(str);
+                console.log(dob);
+
+                //Finding the difference
+                //Result will come into millis
+                let ageInMillis = new Date() - dob;
+                console.log(ageInMillis);
+
+                if (ageInMillis >= 0) {
+                    let ageInDays = Math.round(ageInMillis / (1000 * 60 * 60 * 24));
+
+                    console.log(ageInDays);
+
+                    if (ageInDays > 366) {
+                        let ageInYears = Math.round(ageInDays / 365);
+                        let ageInDaz = ageInDays % 365;
+                        console.log(ageInYears, ageInDaz);
+                        document.getElementById("currentAge").innerText = `${ageInYears} yrs ${ageInDaz} day(s)`;
+                    }
+                    else {
+                        document.getElementById("currentAge").innerText = ageInDays + " day(s)";
+                    }
+
+
+                }
+                else {
+                    document.getElementById("error").innerHTML = '<h5>Year cannot be greater than current year !!</h5>'
+                }
+            }
+            else {
+                document.getElementById("error").innerHTML = '<h5>Date must be in between 1-31 !!</h5>'
+            }
+        }
+        else {
+            document.getElementById("error").innerHTML = '<h5>Blanks are not allowed !!</h5>'
+        }
+
+    }
+</script>
+
+</html>
