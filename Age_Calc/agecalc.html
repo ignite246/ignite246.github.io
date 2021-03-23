@@ -16,6 +16,10 @@
         * {
             font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
+
+        #myDiv {
+            box-shadow: -6px 5px 3px black;
+        }
     </style>
 
     <title>Age Calculator</title>
@@ -24,7 +28,7 @@
 <body style="background-color: #e2e2e2;">
     <div class="container">
         <div class="row mt-5">
-            <div class="col-lg-6 offset-lg-3">
+            <div class="col-lg-6 offset-lg-3 p-0" id="myDiv">
                 <div class="card">
                     <div class="card-header text-center">
                         <h2 class="text-success">Enter your DOB</h2>
@@ -54,12 +58,12 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                        <div class="row bg-secondary p-1 mt-3 text-center">
+                        <div class="row bg-alert mt-1 text-center">
                             <div class="col-sm-6">
                                 <button class="btn btn-md btn-primary" onclick="calcAge()">Get Age</button>
                             </div>
                             <div class="col-sm-6">
-                                <h4 id="currentAge" class="text-white">Your Age ❓</h4>
+                                <h4 id="currentAge" class="text-success">Your Age ❓</h4>
                             </div>
                         </div>
                     </div>
@@ -69,7 +73,7 @@
     </div>
 </body>
 <script>
-    swal("YoBroRahul 💯", "Welcomes You 🌹🌹 ~ Still bugs in the app ❗❗", "success");
+    swal("YoBroRahul 💯", "Welcomes You 🌹🌹", "success");
     const calcAge = () => {
         console.log("Calculating age ..");
 
@@ -102,19 +106,23 @@
                         let ageInYears = Math.round(ageInDays / 365);
                         let ageInDaz = ageInDays % 365;
                         console.log(ageInYears, ageInDaz);
+                        document.getElementById("error").innerHTML = "";
                         document.getElementById("currentAge").innerText = `${ageInYears} yrs ${ageInDaz} day(s)`;
                     }
                     else {
+                        document.getElementById("error").innerHTML = "";
                         document.getElementById("currentAge").innerText = ageInDays + " day(s)";
                     }
 
 
                 }
                 else {
+                    document.getElementById("currentAge").innerText = "";
                     document.getElementById("error").innerHTML = '<h5>Year cannot be greater than current year !!</h5>'
                 }
             }
             else {
+                document.getElementById("currentAge").innerText = "";
                 document.getElementById("error").innerHTML = '<h5>Date must be in between 1-31 !!</h5>'
             }
         }
