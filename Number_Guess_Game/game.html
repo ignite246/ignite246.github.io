@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <title>Guess the Number 🎲</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row my-5">
+            <div class="col-lg-6 offset-lg-3 border border-success p-0">
+                <div class="card text-center">
+                    <div class="card-header">
+                        <h3 id="gameTitle">Guess the number Game</h3>
+                    </div>
+                    <div class="card-body p-0">
+
+                        <div id="section1">
+                            <img src="https://i.gifer.com/fyhz.gif" class="img-fluid" alt="moving cube" srcset=""><br>
+                            <button class="btn btn-warning btn-lg my-2 text-white" onclick="gameStart()">Generate
+                                Number</button>
+                        </div>
+
+                        <div id="section2">
+                            <img src="images/rolling-dice.gif" class="img-fluid" alt="Rolling Dice">
+                            <h3 class="text-primary m-1">Generating Number...</h3>
+                        </div>
+
+                        <div id="section3">
+                            <h4 class="text-primary m-1">Guess any number between 1 to 6</h4>
+                            <h5 id="gen_num" class="text-success m-1"></h5>
+                            <img src="images/thinking.gif" class="img-fluid">
+                            <div class="form-group">
+                                <input type="text" id="user_num" placeholder="Enter number here"
+                                    class="form-control mx-auto">
+                            </div>
+                            <button class="btn btn-lg btn-info m-1" onclick="checkNumber()">Check</button>
+                        </div>
+
+
+                    </div>
+                    <div class="card-footer bg-secondary text-white">
+                        <b>By YoBroRahul</b>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>
