@@ -7,6 +7,8 @@
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <style>
     /* Make the image fully responsive */
 
@@ -15,6 +17,10 @@
       padding: 0;
       font-family: 'Josefin Sans', sans-serif;
 
+    }
+
+    body {
+      background-color: rgba(229, 177, 241, 0.897);
     }
 
     .carousel-inner img {
@@ -26,13 +32,13 @@
       max-height: 70px;
     }
   </style>
-  <title>Home</title>
+  <title>Welcome !! Home 🏠</title>
 </head>
 
 <body>
 
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3" style="font-size: 1.5rem;">
       <a class="navbar-brand" href="#"><img src="images/rlogo.png" class="img-thumbnail rlogo" /></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,27 +51,33 @@
             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="about.html">About Us</a>
+            <a class="nav-link" href="about.html">About Us </a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
-              Other Pages
+              Projects 📚
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="Calculator/juhi.html">Juhi Calculator</a>
-              <a class="dropdown-item" href="Game/scramble.html">JS Word Guessing Game</a>
-              <a class="dropdown-item" href="Number_Guess_Game/game.html">Guess the number Game</a>
-              <a class="dropdown-item" href="Calculator/Calculator.html">Responsive Calc</a>
-              <a class="dropdown-item" href="Corona/corona.html">Corona Case DayWise India</a>
-              <a class="dropdown-item" href="Angular/covidTracker.html">Corona WorldWide Case</a>
-              <a class="dropdown-item" href="Animations/BouncingBallAnimation.html">Bouncing Balls</a>
-              <a class="dropdown-item" href="Animations/RotatingSquareAnimation.html">Rotating Square</a>
-              <a class="dropdown-item" href="TODOs/index.html">TODOs App</a>
               <a class="dropdown-item" href="Bulb_ON_OFF/bulb.html">Bulb ON OFF</a>
               <a class="dropdown-item" href="Digital_Clock/clock.html">Digital Clock</a>
               <a class="dropdown-item" href="Resume_Generator/index.html">Resume Generator</a>
               <a class="dropdown-item" href="Age_Calc/agecalc.html">Age Calculator</a>
+              <a class="dropdown-item" href="Number_Guess_Game/game.html">Guess the number Game</a>
+              <a class="dropdown-item" href="Angular/covidTracker.html">😷 Corona WorldWide Case 😷</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="Dynamic_Quotes/index.html">Dynamic Quotes 📄</a>
+              <a class="dropdown-item" href="Game/scramble.html">JS Word Guessing Game</a></a>
+              <a class="dropdown-item" href="Corona/corona.html">😷 Corona Case DayWise India 😷</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="Calculator/juhi.html">Juhi Calculator</a>
+              <a class="dropdown-item" href="Calculator/Calculator.html">Responsive Calc</a>
+              <a class="dropdown-item" href="Animations/BouncingBallAnimation.html">Bouncing Balls</a>
+              <a class="dropdown-item" href="Animations/RotatingSquareAnimation.html">Rotating Square</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="TODOs/index.html">TODOs App - WIP</a>
+
+
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Something else here</a>
             </div>
@@ -76,7 +88,7 @@
         </ul>
         <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          <button class="btn btn-outline-success my-2 my-sm-0 disabled" type="submit">Search</button>
         </form>
       </div>
     </nav>
@@ -128,21 +140,27 @@
       <hr class="w-25 mx-auto">
 
       <div class="row mb-5">
-        <div class="col-lg-6 col-md-6 col-12">
+        <div class="col-lg-6 col-md-6 col-12" data-aos="fade-up" data-aos-duration="3000">
           <img src="images/mypic.jpg" class="img-fluid thumbnail">
         </div>
-        <div class="col-lg-6 col-md-6 col-12">
+        <div class="col-lg-6 col-md-6 col-12" data-aos="flip-left" data-aos-easing="ease-out-cubic"
+          data-aos-duration="2000">
           <h1 class="text-center">Who Am I ?</h1>
           <hr>
-          <p>
-            Currently, I am working in TCS as a Developer since July,2019.
-            Mainly I work with Java Technology, but sometimes need to work
-            with front end technologies like HTML, CSS, JS.
-            <br>
-            I am interested in Full Stack Development.
-
+          <p class="jumbotron-fluid">
+            Currently, I am working in TCS as a Developer since July, 2019.
+            Mainly I work with Java Technology, MySQL, HTML, CSS, JS, JQuery, Bootstrap and tools like Jenkins, DevPlus.
+            Recently, I have implemnted JMS using Apache Artemis in my project.
+            <hr>
+            Apart from professional life, I am learning so many things and used to build projects :
+          <ol class="p-3">
+            <li>Java Frameworks - Spring, Spring Boot, Hibernate, MVC Design Pattern</li>
+            <li>Javascript Frameworks and Library - React, Node JS, Express</li>
+            <li>Python Frameworks - Flask</li>
+          </ol>
+          😄 I am interested in Full Stack Development.
           </p>
-          <button class="btn bg-primary text-white">Wanna Know me</button>
+          <button id="wannaKnowMe" class="btn bg-primary text-white">Wanna Know me</button>
         </div>
       </div>
     </div>
@@ -159,7 +177,7 @@
     </div>
 
     <div class="row text-center mb-5">
-      <div class="col-lg-4 col-md-4 col-12">
+      <div class="col-lg-4 col-md-4 col-12" data-aos="flip-right" data-aos-duration="3000">
         <div class="card">
           <img class="card-img-top" src="images/wp3.jpg" alt="Card image">
           <div class="card-body">
@@ -170,7 +188,7 @@
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-4 col-12">
+      <div class="col-lg-4 col-md-4 col-12" data-aos="fade-up" data-aos-duration="3000">
         <div class="card">
           <img class="card-img-top" src="images/wp3.jpg" alt="Card image">
           <div class="card-body">
@@ -181,7 +199,7 @@
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-4 col-12">
+      <div class="col-lg-4 col-md-4 col-12" data-aos="flip-left" data-aos-duration="3000">
         <div class="card">
           <img class="card-img-top" src="images/wp3.jpg" alt="Card image">
           <div class="card-body">
@@ -199,7 +217,7 @@
   <!-- Services Ends -->
 
   <!-- Contact  -->
-  <section class="bg-primary">
+  <section class="bg-primary" data-aos="zoom-in">
     <article class="py-5 text-center text-white">
       <div>
         <h3 class="display-4">+91 6201320703</h3>
@@ -218,22 +236,22 @@
       <hr class="w-25 mx-auto pt-5">
 
       <div class="row">
-        <div class="col-lg-4 col-md-2 col-12 mb-4">
+        <div class="col-lg-4 col-md-2 col-12 mb-4" data-aos="zoom-out-up" data-aos-duration="2000">
           <img src="images/joker1.jpg" class="img-fluid">
         </div>
-        <div class="col-lg-4 col-md-2 col-12 mb-4">
+        <div class="col-lg-4 col-md-2 col-12 mb-4" data-aos="zoom-out-up" data-aos-duration="2000">
           <img src="images/joker2.jpg" class="img-fluid">
         </div>
-        <div class="col-lg-4 col-md-2 col-12 mb-4">
+        <div class="col-lg-4 col-md-2 col-12 mb-4" data-aos="zoom-out-up" data-aos-duration="2000">
           <img src="images/joker3.jpg" class="img-fluid">
         </div>
-        <div class="col-lg-4 col-md-2 col-12 mb-4">
+        <div class="col-lg-4 col-md-2 col-12 mb-4" data-aos="zoom-out-up" data-aos-duration="2500">
           <img src="images/joker4.jpg" class="img-fluid">
         </div>
-        <div class="col-lg-4 col-md-2 col-12 mb-4">
+        <div class="col-lg-4 col-md-2 col-12 mb-4" data-aos="zoom-out-up" data-aos-duration="2500">
           <img src="images/joker5.jpg" class="img-fluid">
         </div>
-        <div class="col-lg-4 col-md-2 col-12 mb-4">
+        <div class="col-lg-4 col-md-2 col-12 mb-4" data-aos="zoom-out-up" data-aos-duration="2500">
           <img src="images/joker6.jpg" class="img-fluid">
         </div>
       </div>
@@ -304,32 +322,36 @@
       <hr class="w-25 mx-auto pt-5">
 
       <div class="w-50 mx-auto">
-        <form action="/action_page.php">
-          <div class="form-group">
-            <label for="email">Your Name</label>
-            <input type="text" class="form-control" placeholder="Enter your full name" id="name" autocomplete="off">
-          </div>
-          <div class="form-group">
-            <label for="pwd">Email</label>
-            <input type="password" class="form-control" placeholder="Enter an active email id" id="email">
-          </div>
-          <div class="form-group">
-            <label for="pwd">Mobile No.:</label>
-            <input type="number" class="form-control" placeholder="Enter active mobile number" id="mobile">
-          </div>
+        <div class="card">
+          <div class="card-body">
+            <div id="form">
+              <div class="form-group">
+                <label for="email">Your Name</label>
+                <input type="text" class="form-control" placeholder="Enter your full name" id="name" autocomplete="off">
+              </div>
+              <div class="form-group">
+                <label for="pwd">Email</label>
+                <input type="password" class="form-control" placeholder="Enter an active email id" id="email">
+              </div>
+              <div class="form-group">
+                <label for="pwd">Mobile No.:</label>
+                <input type="number" class="form-control" placeholder="Enter active mobile number" id="mobile">
+              </div>
 
-          <div class="form-group">
-            <label>Comments</label>
-            <textarea class="form-control"></textarea>
-          </div>
+              <div class="form-group">
+                <label>Comments</label>
+                <textarea class="form-control"></textarea>
+              </div>
 
-          <div class="form-group form-check">
-            <label class="form-check-label">
-              <input class="form-check-input" type="checkbox"> Remember me
-            </label>
+              <div class="form-group form-check">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="checkbox"> Remember me
+                </label>
+              </div>
+              <button id="saveResponseBtn" type="button" class="btn btn-primary">Save Response</button>
+            </div>
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+        </div>
       </div>
     </div>
   </section>
@@ -337,11 +359,27 @@
   <!-- Contact us end -->
 
   <!-- Footer -->
-  <footer>
-    <p class="text-center bg-dark text-white">Rahul Kumar 2020 @momo.com</p>
+  <footer class="text-center bg-dark text-white">
+    <p>Rahul Kumar 2021 @ignite246.github.io</p>
+    <a href="https://www.youtube.com/channel/UCAdq8vW9pj0lcEIT9xHUsfw">Visit Youtube</a>
   </footer>
 
 </body>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+  const saveResponse = () => {
+    swal("WIP", "Will be implemented soon", "success");
+  }
+  let saveResponseBtn = document.getElementById("saveResponseBtn");
+  saveResponseBtn.addEventListener("click", saveResponse);
+
+  const wannaKnowMe = () => {
+    swal("WIP", "Thank you ❤️", "info");
+  }
+  let wannaKnowMeBtn = document.getElementById("wannaKnowMeBtn");
+  wannaKnowMeBtn.addEventListener("click", wannaKnowMe);
+</script>
 
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

@@ -1,0 +1,33 @@
+body{
+    background-color: rgb(11, 45, 61);
+}
+#quote{
+    font-family: 'Tangerine', cursive;
+    font-size: 2.5rem;
+}
+.card{
+    box-shadow : 0px 0px 5px rgb(104, 5, 196);
+    border : 3px solid rgb(24, 7, 252);
+}
+.card-body{
+    background-color: deepskyblue;
+}
+.card-footer{
+    background-color: rgba(63, 183, 219, 0.979);
+}
+#quote{
+   font-weight: bolder;
+}
+#author{
+    color : rgb(152, 8, 236);
+    font-weight: bolder;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.row{
+    box-shadow : 0px 5px 5px black;
+    border-radius : 20px 0px 15px 0px;
+    margin-top: 10%;
+}
+#newQ,#tweetMe{
+    border : 2px solid rgb(170, 6, 247);
+}

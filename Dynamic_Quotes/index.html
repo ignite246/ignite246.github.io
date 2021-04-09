@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Dynamic Quotes</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row bg-info p-5">
+            <div class="col-xs-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+                <div class="card my-5" data-aos="zoom-in">
+                    <div class="card-body">
+                        <div id="quote" class="mb-5"></div>
+                        <div id="author" class=" float-right mt-5"></div>
+                    </div>
+                    <div class="card-footer text-center">
+                        <button class="btn" id="newQ" title="Get new quote">New
+                            Quote</button>
+                        <button class="btn" id="tweetMe" title="Tweet on twitter">
+                            Tweet<img src="twitter.webp" class="img-fluid" style="max-width:1.3rem;">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+    const quote = document.getElementById("quote");
+    const author = document.getElementById("author");
+    const newQ = document.getElementById("newQ");
+    const tweetMe = document.getElementById("tweetMe");
+
+    let realData = "";
+    let quoteData = "";
+
+    const tweetNow = () => {
+        let tweetPost = `https://twitter.com/intent/tweet?text=${quoteData.text} by ${quoteData.author}`;
+        window.open(tweetPost);
+    }
+
+
+    const getNewQuotes = () => {
+        let rnum = Math.floor(Math.random() * 20);
+        quoteData = realData[rnum];
+
+        //putting quote text
+        quote.innerText = `${quoteData.text}`;
+
+        //putting quote author and handling null
+        if (quoteData.author != null)
+            author.innerText = `${quoteData.author}`;
+        else
+            author.innerText = 'Unknown';
+    };
+
+
+    const getQuotes = async () => {
+        const api = "https://type.fit/api/quotes";
+        try {
+            let data = await fetch(api);
+            realData = await data.json();
+            getNewQuotes();
+        }
+        catch (error) {
+            console.log(error);
+        }
+    };
+    tweetMe.addEventListener('click', tweetNow);
+    newQ.addEventListener("click", getNewQuotes);
+    getQuotes();
+
+</script>
+
+</html>
