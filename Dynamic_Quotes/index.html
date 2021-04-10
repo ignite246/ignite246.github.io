@@ -7,20 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Dynamic Quotes</title>
 </head>
 
 <body>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row bg-info p-5">
             <div class="col-xs-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
                 <div class="card my-5" data-aos="zoom-in">
+                    <div class="card-header text-center p-0">
+                        <img src="twitter.webp" class="img-fluid" style="max-height:3rem;">
+                    </div>
                     <div class="card-body">
                         <div id="quote" class="mb-5"></div>
                         <div id="author" class=" float-right mt-5"></div>
@@ -29,7 +28,7 @@
                         <button class="btn" id="newQ" title="Get new quote">New
                             Quote</button>
                         <button class="btn" id="tweetMe" title="Tweet on twitter">
-                            Tweet<img src="twitter.webp" class="img-fluid" style="max-width:1.3rem;">
+                            Tweet 🐦
                         </button>
                     </div>
                 </div>
@@ -56,7 +55,7 @@
 
 
     const getNewQuotes = () => {
-        let rnum = Math.floor(Math.random() * 20);
+        let rnum = Math.floor(Math.random() * 1000);
         quoteData = realData[rnum];
 
         //putting quote text
@@ -64,9 +63,9 @@
 
         //putting quote author and handling null
         if (quoteData.author != null)
-            author.innerText = `${quoteData.author}`;
+            author.innerText = `by ${quoteData.author}`;
         else
-            author.innerText = 'Unknown';
+            author.innerText = 'by Unknown';
     };
 
 
