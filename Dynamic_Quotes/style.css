@@ -23,7 +23,7 @@ body{
 }
 .row{
     box-shadow : 5px 5px 10px rgb(3, 28, 247);
-    margin-top: 10%;
+    margin-top: 5%;
 }
 #newQ,#tweetMe{
     border : 2px solid rgb(170, 6, 247);
