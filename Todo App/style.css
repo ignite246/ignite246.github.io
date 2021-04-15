@@ -1,0 +1,25 @@
+body{
+    background-color: #b6c0c0;
+    font-family: 'Open Sans', sans-serif;
+}
+.bg-darkblue{
+    background-color: #060b6b;
+}
+.bg-darkred{
+    background-color: #f70702;
+}
+#todo{
+    box-shadow: 0.5rem 0.5rem 0.5rem black;
+}
+.card-header h1{
+    text-shadow : 2px 2px 2px black;
+}
+
+.card-body label{
+    text-shadow : 1px 1px 1px black;
+    margin-top : 1rem;
+}
+
+#todoList .card{
+    border : 2px solid rgb(22, 6, 114);
+}
