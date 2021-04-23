@@ -15,20 +15,20 @@
 <body>
     <div class="container-fluid">
         <div class="row bg-info p-5">
-            <div class="col-xs-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+            <div class="col-xs-12 col-sm-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
                 <div class="card my-5" data-aos="zoom-in">
                     <div class="card-header text-center p-0">
-                        <img src="twitter.webp" class="img-fluid" style="max-height:3rem;">
+                        <img src="twitter.webp" class="img-fluid anime" style="max-height:3rem;">
                     </div>
                     <div class="card-body">
                         <div id="quote" class="mb-5"></div>
                         <div id="author" class=" float-right mt-5"></div>
                     </div>
                     <div class="card-footer text-center">
-                        <button class="btn" id="newQ" title="Get new quote">New
+                        <button class="btn p-2 btn-md anime" id="newQ" title="Get new quote">New
                             Quote</button>
-                        <button class="btn" id="tweetMe" title="Tweet on twitter">
-                            Tweet 🐦
+                        <button class="btn btn-md p-1" id="tweetMe" title="Tweet on twitter">
+                            <img src="twitter.webp" class="img-fluid" style="max-height:2.5rem;">
                         </button>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
 
 
     const getNewQuotes = () => {
-        let rnum = Math.floor(Math.random() * 1000);
+        let rnum = Math.floor(Math.random() * 2000);
         quoteData = realData[rnum];
 
         //putting quote text
