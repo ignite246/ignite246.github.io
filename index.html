@@ -9,36 +9,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <style>
-    /* Make the image fully responsive */
-
-    * {
-      margin: 0;
-      padding: 0;
-      font-family: 'Josefin Sans', sans-serif;
-
-    }
-
-    body {
-      background-color: rgb(76, 6, 92);
-    }
-
-    .carousel-inner img {
-      width: 100%;
-      height: 100%;
-    }
-
-    .rlogo {
-      max-height: 70px;
-    }
-  </style>
+  <link href="css/style.css" rel="stylesheet">
   <title>Welcome !! Home 🏠</title>
 </head>
 
 <body>
 
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3" style="font-size: 1.5rem;">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-2 py-0" style="font-size: 1.5rem;">
       <a class="navbar-brand" href="#"><img src="images/rlogo.png" class="img-thumbnail rlogo" /></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,15 +25,12 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <li class="nav-item mx-1"><a class="nav-link btn btn-md btn-outline-success" href="#">🏡 Home </a></li>
+          <li class="nav-item mx-1"><a class="nav-link btn btn-md btn-outline-primary" href="about.html">👨‍⚖️ About</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">About Us </a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
+          <li class="nav-item mx-2 dropdown">
+            <a class="nav-link btn btn-md btn-outline-danger dropdown-toggle" href="#" id="navbarDropdown" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Projects 📚
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -83,9 +58,6 @@
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Something else here</a>
             </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
