@@ -9,7 +9,7 @@
   }
 
   body {
-    background-color: rgb(239, 163, 241);
+    background-color: rgb(6, 98, 110);
   }
 
   .carousel-inner img {
@@ -24,3 +24,9 @@
   nav{
     box-shadow: 0px 5px 5px black;
   }
+
+  .border-3 {
+    border : 10px solid rgb(83, 88, 88);
+    border-style:inset;
+}
+ 
