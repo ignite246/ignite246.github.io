@@ -26,7 +26,8 @@
   }
 
   .border-3 {
-    border : 10px solid rgb(83, 88, 88);
-    border-style:inset;
+    border : 15px solid rgba(255, 154, 3, 0.493);
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+    border-radius: 5px;
 }
  

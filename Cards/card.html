@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <title>Card</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .myCol {
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+            cursor: pointer;
+        }
+
+        .card {
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row bg-danger">
+        <div class="col-xs-12 col-sm-12 col-md-4 offset-md-4 col-lg-4 offset-lg-4 myCol p-0 my-5" data-tilt>
+            <div class="card text-center">
+                <div class="card-body p-0">
+                    <div class="image">
+                        <img src="img1.jpg" alt="Image" class="img-fluid">
+                    </div>
+                    <div class="date my-2 text-warning">
+                        <h4>4 days ago</h4>
+                    </div>
+                    <div class="post mb-3 text-primary">
+                        <h5>Post One</h5>
+                        <div>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis dolorem veritatis
+                            repellat
+                            laboriosam repudiandae? Distinctio, error accusantium recusandae pariatur nostrum
+                            necessitatibus
+                            a, molestias magni veritatis amet, dolor quibusdam impedit iusto?
+                        </div>
+
+                    </div>
+                    <div class="row bg-dark m-0 text-warning p-0">
+                        <div class="col-sm-4 border-right">
+                            <p class="m-0">10 <sup>Mn</sup></p>
+                            <span>Views</span>
+                        </div>
+                        <div class="col-sm-4">
+                            <p class="m-0">3245</p>
+                            <p>Comments</p>
+                        </div>
+                        <div class="col-sm-4 border-left">
+                            <p class="m-0">567 <sup>K</sup></p>
+                            <span>Likes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../JS/vanilla-tilt.min.js"></script>
+</body>
+
+</html>
