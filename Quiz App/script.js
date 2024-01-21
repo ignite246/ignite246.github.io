@@ -35,10 +35,42 @@ const quizDB = [
         question: "Q5: Who is the CEO of TCS?",
         a: "N Chandra",
         b: "Cyrus Mistri",
-        c: "V Ramaswammy",
+        c: "K. Krithivasan",
         d: "Rajesh Gopinathan",
+        ans: "ans3"
+    },
+    {
+        question: "Q6: Which of the following language does the computer understand?",
+        a: "Computer understands only C Language",
+        b: "Computer understands only Binary Language",
+        c: "Computer understands only Assembly Language",
+        d: "Computer understands only BASIC",
+        ans: "ans2"
+    },
+    {
+        question: "Q7: Which of the following is not a characteristic of a computer?",
+        a: "Versatility",
+        b: "Accuracy",
+        c: "Diligence",
+        d: "I.Q.",
         ans: "ans4"
     },
+    {
+        question: "Q8: Which of the following is the smallest unit of data in a computer?",
+        a: "Bit",
+        b: "KB",
+        c: "Nibble",
+        d: "Byte",
+        ans: "ans1"
+    },
+    {
+        question: "Q9: Which of the following devices provides the communication between a computer and the outer world?",
+        a: "Compact",
+        b: "I/O",
+        c: "Storage",
+        d: "Drivers",
+        ans: "ans2"
+    }
 ];
 
 // quizDB.forEach(obj => {
